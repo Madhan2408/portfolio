@@ -1,369 +1,499 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>M. Madan Mohan — Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
-<style>
-:root{
-  --navy:#0b1b3a;
-  --gold:#d4af37;
-  --bg:#faf8f6;
-  --muted:#55607a;
-  --card:#ffffff;
-  --maxw:1100px;
-  --pad:20px;
-}
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:"Source Sans Pro",system-ui,Arial,sans-serif;
-  background:linear-gradient(180deg,var(--bg),#fff 60%);
-  color:#0b1722;
-  padding:24px;
-  display:flex;
-  justify-content:center;
-}
-.container{
-  width:100%;
-  max-width:var(--maxw);
-  background:var(--card);
-  border-radius:12px;
-  box-shadow:0 18px 50px rgba(11,27,58,0.06);
-  overflow:hidden;
-  border:1px solid rgba(11,27,58,0.06);
-}
-header{
-  background:linear-gradient(90deg,var(--navy),#07203a);
-  color:white;
-  padding:18px var(--pad);
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:12px;
-  flex-wrap:wrap;
-}
-.header-left{display:flex;gap:14px;align-items:center}
-.profile-photo{
-  width:96px;height:96px;border-radius:50%;overflow:hidden;border:3px solid var(--gold);flex:0 0 96px;background:#f3f3f3;
-}
-.profile-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.title h1{font-family:'Poppins',sans-serif;margin:0;font-size:20px}
-.title .subtitle{margin-top:6px;color:rgba(255,255,255,0.85);font-size:13px}
-.title .badge{margin-top:8px;font-size:13px;color:var(--gold);font-weight:700;text-decoration:none}
-.header-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-.btn{
-  background:var(--gold);
-  color:var(--navy);
-  padding:9px 14px;border-radius:8px;font-weight:700;text-decoration:none;border:none;cursor:pointer;
-  display:inline-flex;align-items:center;gap:8px;
-  transition:transform .14s ease,box-shadow .14s ease;
-}
-.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(212,175,55,0.18)}
-.btn.secondary{background:transparent;color:white;border:1px solid rgba(255,255,255,0.12)}
-.container-body{display:grid;grid-template-columns:320px 1fr;gap:0}
-.sidebar{padding:20px;background:linear-gradient(180deg,#fbfdff,#f6f9fb);border-right:1px solid rgba(11,27,58,0.04)}
-.section{margin-bottom:18px}
-.section h3{font-size:12px;color:var(--muted);font-weight:800;letter-spacing:0.6px;margin-bottom:10px}
-.contact p{font-size:14px;color:var(--muted);line-height:1.5;margin:6px 0}
-.link{color:var(--navy);text-decoration:none;font-weight:700}
-.tag{display:inline-block;background:linear-gradient(90deg,#fff7e6,#fffaf0);color:var(--gold);padding:6px 10px;border-radius:999px;margin:4px 6px 0 0;font-weight:800;font-size:13px}
-.roles{color:var(--muted);line-height:1.6}
-.content{padding:22px}
-.card{background:linear-gradient(180deg,#fff,#fcfeff);border-radius:10px;padding:18px;margin-bottom:18px;border:1px solid rgba(11,27,58,0.03);box-shadow:0 8px 30px rgba(11,27,58,0.02);transition:transform .18s ease}
-.card:hover{transform:translateY(-6px)}
-h2.sec{font-family:'Poppins',sans-serif;color:var(--navy);font-size:18px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
-.lead{color:var(--muted);line-height:1.6}
-ul.plain{padding-left:18px;margin:6px 0}
-table{width:100%;border-collapse:collapse;margin-top:8px}
-th,td{padding:8px;border-bottom:1px dashed rgba(11,27,58,0.04);text-align:left;font-size:14px}
-.pub{margin-bottom:8px}
-.footer{padding:12px 22px;border-top:1px solid rgba(11,27,58,0.03);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
-@media (max-width:980px){
-  .container-body{grid-template-columns:1fr}
-  .sidebar{order:2;border-right:none;border-top:1px solid rgba(11,27,58,0.04)}
-  header{flex-direction:column;align-items:flex-start;gap:12px}
-}
-@media print{
-  .btn{display:none}
-  .card{box-shadow:none;transform:none}
-  header{background:#0b1b3a;color:white}
-  a[href]:after{content:" (" attr(href) ")";font-size:11px;color:var(--muted)}
-  body{padding:0;background:white}
-  .container{box-shadow:none;border-radius:0}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M. Madan Mohan - Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="container" role="document">
-    <header>
-      <div class="header-left">
-        <div class="profile-photo">
-          <!-- save your photo as profile.png in same folder -->
-          <img src="profile.png" alt="Profile Photo">
-        </div>
-        <div class="title">
-          <h1>M. MADAN MOHAN, M.E., (Ph.D)</h1>
-          <div class="subtitle">Assistant Professor — Department of Computer Science & Engineering</div>
-          <a class="badge" href="https://nptel.ac.in/noc/domain/cs/Programming" target="_blank">🏅 NPTEL Domain Scholar — Programming</a>
-        </div>
-      </div>
 
-      <div class="header-actions">
-        <!-- Download Resume button first -->
-        <a class="btn" href="MADAN MOHAN- RESUME.pdf" target="_blank">📄 Download Resume</a>
-        <a class="btn" href="mailto:madhanaceit@gmail.com">📩 Email Me</a>
-        <a class="btn" href="https://www.linkedin.com/in/madanmohan-reyansh/" target="_blank">🔗 LinkedIn</a>
-        <a class="btn" href="https://leetcode.com/u/Madhan2024/" target="_blank">💼 LeetCode</a>
-        <a class="btn secondary" href="#" onclick="window.print();return false;">⬇ Download Portfolio PDF</a>
-      </div>
+    <!-- Header & Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo"><i class="fas fa-graduation-cap"></i> M. MADAN MOHAN</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Profile</a></li>
+                <li><a href="#nptel-star">NPTEL STAR</a></li>
+                <li><a href="#resource">Resource Person</a></li>
+                <li><a href="#hackathons">Hackathons</a></li>
+                <li><a href="#funding">Funding</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#patents">Patents</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#academics">Academics</a></li>
+		<li><a href="#gallery">Gallery</a></li>
+            </ul>
+        </div>
     </header>
 
-    <div class="container-body">
-      <!-- LEFT SIDEBAR -->
-      <aside class="sidebar" aria-label="Sidebar">
-        <div class="section card">
-          <h3>Contact</h3>
-          <div class="contact">
-            <p><strong>Address:</strong><br>Site no 9, Mayil Nagar, Marappalam, Madukkarai, Coimbatore - 641105</p>
-            <p><strong>Email:</strong> <a class="link" href="mailto:madhanaceit@gmail.com">madhanaceit@gmail.com</a><br>
-               <strong>Phone:</strong> +91-7904361553</p>
-            <p><strong>LinkedIn:</strong><br><a class="link" href="https://www.linkedin.com/in/madanmohan-reyansh/" target="_blank">linkedin.com/in/madanmohan-reyansh/</a></p>
-            <p><strong>LeetCode:</strong><br><a class="link" href="https://leetcode.com/u/Madhan2024/" target="_blank">Madhan2024</a></p>
-          </div>
+    <main class="container main-content">
+
+        <!-- Hero Section with Photo on Left & Personal Details on Right -->
+        <section id="hero" class="hero-section card animate-card">
+            <div class="hero-layout">
+                <div class="hero-img-box">
+                    <img src="photos/photo1.jpg" alt="M. Madan Mohan Profile Photo" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=500&q=80'">
+                    <span class="photo-tag"></span>
+                </div>
+                
+                <div class="hero-details-wrapper">
+                    <div class="hero-text">
+                        <h1>M. MADAN MOHAN <span class="deg">M.E., (Ph.D)</span></h1>
+                        <p class="subtitle">Assistant Professor (Senior Grade) - Department of Computer Science & Engineering</p>
+                        <p class="contact-strip"><i class="fas fa-briefcase"></i> Nehru Institute of Engineering and Technology, Coimbatore</p>
+                        <div class="social-btns mt-2">
+                            <a href="https://www.linkedin.com/in/madanmohan-reyansh/" target="_blank" class="btn-sm"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://leetcode.com/u/Madhan2024/" target="_blank" class="btn-sm"><i class="fas fa-code"></i> LeetCode</a>
+                            <a href="https://www.instagram.com/madhan_reyansh?igsh=MW15cWk3aTFneW81OA==" target="_blank" class="btn-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                            <a href="https://www.facebook.com/madhanaceit" target="_blank" class="btn-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="inline-personal-box">
+                        <h3>Personal Details</h3>
+                        <div class="personal-grid-inline">
+                            <div><i class="fas fa-calendar-alt text-gold"></i> <strong>DOB:</strong> 24.08.1987</div>
+                            <div><i class="fas fa-ring text-emerald"></i> <strong>Marital Status:</strong> Married</div>
+                            <div><i class="fas fa-flag text-gold"></i> <strong>Nationality:</strong> Indian</div>
+                            <div><i class="fas fa-language text-emerald"></i> <strong>Languages:</strong> Tamil, English, Malayalam</div>
+                            <div><i class="fas fa-map-marker-alt text-gold"></i> <strong>Address:</strong> Madukkarai, Coimbatore - 641105</div>
+                            <div><i class="fas fa-phone text-emerald"></i> <strong>Contact:</strong> +91-7904361553</div>
+                            <div><i class="fas fa-envelope text-gold"></i> <strong>Email:</strong> madhanaceit@gmail.com</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="nptel-star" class="section-block card animate-card">
+            <span class="eyebrow">Certifications</span>
+            <h2>NPTEL STAR</h2>
+            <p class="section-desc">Domain Scholars and Certifications Portfolio</p>
+            
+            <div class="nptel-two-grid">
+                <div class="nptel-card-two">
+                    <img src="photos/photo2.jpg" alt="Domain Scholar Programming" onerror="this.src='https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=400&q=80'">
+                    <div class="nptel-card-body">
+                        <h4>Domain Scholar (Programming)</h4>
+                    </div>
+                </div>
+
+                <div class="nptel-card-two">
+                    <img src="photos/photo3.jpg" alt="Domain Scholar Faculty Fundamental" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=400&q=80'">
+                    <div class="nptel-card-body">
+                        <h4>Domain Scholar (Faculty Fundamental)</h4>
+                    </div>
+                </div>
+
+                <div class="nptel-card-two">
+                    <img src="photos/photo4.jpg" alt="Discipline Stars" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80'">
+                    <div class="nptel-card-body">
+                        <h4>Discipline Stars</h4>
+                    </div>
+                </div>
+
+                <div class="nptel-card-two believer-card">
+                    <div class="photo-scroll ratio-portrait">
+                        <div class="scroll-track frames-4">
+                            <img src="photos/photo5-1.jpg" alt="Believers 1" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-2.jpg" alt="Believers 2" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-3.jpg" alt="Believers 3" onerror="this.src='https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-4.jpg" alt="Believers 4" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-1.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-2.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-3.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo5-4.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80'">
+                        </div>
+                    </div>
+                    <div class="nptel-card-body">
+                        <h4>Believers (Quadrice)</h4>
+                    </div>
+                </div>
+
+                <div class="nptel-card-two">
+                    <img src="photos/photo6.jpg" alt="Motivated Learner" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=400&q=80'">
+                    <div class="nptel-card-body">
+                        <h4>Motivated Learner</h4>
+                    </div>
+                </div>
+<div class="nptel-card-two">
+    <div class="photo-scroll ratio-portrait">
+        <div class="scroll-track frames-4">
+            <img src="photos/photo31-1.jpg" alt="Star Interaction 1" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-2.jpg" alt="Star Interaction 2" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-3.jpg" alt="Star Interaction 3" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-4.jpg" alt="Star Interaction 4" onerror="this.src='https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-1.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-2.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-3.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80'">
+            <img src="photos/photo31-4.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?auto=format&fit=crop&w=400&q=80'">
         </div>
-
-        <div class="section card">
-          <h3>Core Competencies</h3>
-          <div>
-            <span class="tag">Cloud / Edge / Fog</span>
-            <span class="tag">Internet of Things</span>
-            <span class="tag">Machine Learning</span>
-            <span class="tag">Data Structures</span>
-            <span class="tag">Big Data Analytics</span>
-          </div>
-        </div>
-
-        <div class="section card">
-          <h3>Roles & Responsibilities</h3>
-          <div class="roles">
-            <div>• Participate in Student recruitment and Placement activities.</div>
-            <div>• NPTEL (SPOC)</div>
-            <div>• Member in Marketing and advertisement Panel.</div>
-            <div>• NBA & NAAC Department Coordinator</div>
-            <div>• Virtual lab Coordinator & IQAC Coordinator</div>
-            <div>• Website & Social media Coordinator</div>
-          </div>
-        </div>
-
-        <div class="section card">
-          <h3>Education</h3>
-          <div class="roles">
-            <div><strong>Ph. D (Pursuing)</strong><br><span class="muted">Computer Science and Engineering — Karpagam Academy of Higher Education / Karpagam University (2021 Jan batch)</span></div>
-            <div style="margin-top:8px"><strong>M.E (Software Engineering)</strong><br><span class="muted">Anna University, Coimbatore — CGPA 8.0 (2010–2012)</span></div>
-            <div style="margin-top:8px"><strong>B.Tech (Information Technology)</strong><br><span class="muted">Adhiyamaan College of Engineering — 71.0% (2007–2010)</span></div>
-            <div style="margin-top:8px"><strong>Diploma (Information Technology)</strong><br><span class="muted">Sri Ramakrishna Mission Vidhayalaya — DOTE (2003–2006) 72.46%</span></div>
-          </div>
-        </div>
-
-        <div class="section card">
-          <h3>Languages</h3>
-          <p class="muted">Tamil • English • Malayalam</p>
-        </div>
-
-      </aside>
-
-      <!-- MAIN CONTENT -->
-      <main class="content" role="main">
-        <section class="card">
-          <h2 class="sec">Professional Summary</h2>
-          <p class="lead">
-            Innovative educator adept at bringing the 21st Century into the classroom. Skilled at utilizing current educational hardware and software both in and out of the setting. 12+ years of experience as a teacher, mentor and department coordinator responsible for the innovation and development of new programs and initiatives.
-          </p>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Work Experience</h2>
-          <ul class="plain">
-            <li><strong>NEHRU INSTITUTE OF ENGINEERING AND TECHNOLOGY, Coimbatore.</strong> (Nov 2020 - Till Date) — Assistant Professor, Department of Computer Science and Engineering.</li>
-            <li><strong>KARPAGAM COLLEGE OF ENGINEERING, Coimbatore.</strong> (April 2019 - Nov 2020) — Assistant Professor, Department of Computer Science and Engineering.</li>
-            <li><strong>SRI SHAKTHI INSTITUTE OF ENGINEERING & TECHNOLOGY, Coimbatore.</strong> (September 2016 - Aug 2018) — Assistant Professor-Computer Science and Engineering.</li>
-            <li><strong>RANGANATHAN ENGINEERING COLLEGE, Coimbatore.</strong> (June 2012 to August 2016) — Assistant Professor-Department of Computer Science and Engineering.</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Academic Details</h2>
-          <table>
-            <tbody>
-              <tr><td><strong>Ph. D</strong></td><td>Computer Science and Engineering — Karpagam Academy of Higher Education / Karpagam University — Pursuing (2021 Jan batch)</td></tr>
-              <tr><td><strong>M.E</strong></td><td>C.S.E (Software Engineering) — Anna University, Coimbatore — CGPA 8.0 (2010–2012)</td></tr>
-              <tr><td><strong>B. Tech</strong></td><td>Information Technology — Adhiyamaan College of Engineering — 71.0% (2007–2010)</td></tr>
-              <tr><td><strong>Diploma</strong></td><td>Information Technology — Sri Ramakrishna Mission Vidhayalaya — DOTE — 72.46% (2003–2006)</td></tr>
-              <tr><td><strong>SSLC</strong></td><td>Anuparpalayam High School — State Board — 66.4% (2003)</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Funding Details</h2>
-          <ul class="plain">
-            <li>Received CSIR Seminar Grant and Conducted Two Days National Level Seminar on “Perspective Amelioration in Computing via IoT in Real Time Applications” during April 11 & April 12 2022.</li>
-            <li>Received Tamilnadu State Council for Science and Technology Student Projects Scheme (TNSCST) 2021-2022 For the project and the project has been completed and submitted successfully.</li>
-            <li>VISIONARY NAVIGATION CANE, DST funded project has been selected by the New Generation Innovation and Entrepreneurship Development Centre (NGI New Gen IEDC) for the year 2023-2024.</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Recent Journal Publications (Selected)</h2>
-          <div class="pub"><strong>A Detailed Review on Challenges in the Computational Frameworks in Building 6G for Healthcare System</strong>, 2024 — 4th International Conference on Advance Computing and Innovative Technologies in Engineering (ICACITE) – SEP 2024 (Scopus Indexed).</div>
-          <div class="pub"><strong>A Portable Device for Monitoring Fetal Movement Count</strong>, International Journal of Engineering Research & Technology (IJERT), Vol. 13 Issue 4, April 2024.</div>
-          <div class="pub"><strong>Pioneering Stroke Detection for Proactive Healthcare Interventions</strong>, International Journal of Engineering Research & Technology (IJERT), Vol. 13 Issue 4, April 2024.</div>
-          <div class="pub"><strong>Classification of Kidney Cancer Data Using Depth Aware Generative Adversarial Networks Approach</strong>, The Seybold Report – Volume 18 (ISSN 1533-9211) Scopus Indexed - June 2023.</div>
-          <div class="pub"><strong>Survival Study on Load Balancing Methods in Edge Computing with Healthcare Data</strong>, International Journal of Mechanical Engineering (April 2022) Scopus Index (ISSN: 0974-5823).</div>
-          <div class="pub"><strong>Enactment of Firefly Algorithm and Fuzzy C-Means Clustering for Consumer Request and Demand Prediction</strong>, International Research Journal of Engineering and Technology (IRJET), Volume: 09 Issue: 03 | Mar 2022.</div>
-          <div class="pub"><strong>Augmented Reality Watch Try - On Application</strong>, Journal of Science Technology and Research (JSTAR), VOL 03 Issued on July 2021.</div>
-          <div class="pub"><strong>Identification of Plant Syndrome Using IPT</strong>, JSTAR, VOL 03, July 2021.</div>
-          <div class="pub"><strong>Automatic Face Mask Detection Using Python</strong>, JSTAR, VOL 03, July 2021.</div>
-          <div class="pub"><strong>A Multiple Sensor Data-Fusion For EFD Using IoT</strong>, JSTAR, VOL 03, July 2021.</div>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Hackathon Projects Guided</h2>
-          <table>
-            <thead>
-              <tr><th>Event</th><th>Project Title</th><th>Venue</th><th>Achievement</th><th>Year</th></tr>
-            </thead>
-            <tbody>
-              <tr><td>Smart India Hackathon</td><td>Automatic Drug Dispenser</td><td>Manipal Institute of Technology, Manipal</td><td>Secured First Prize (₹1,00,000)</td><td>Dec-23</td></tr>
-              <tr><td>Women’s Hackathon</td><td>Automatic Drug Dispenser</td><td>KIT- Kalaignar Karunanidhi Institute of Technology</td><td>Secured First Prize (₹1,00,000)</td><td>Mar-24</td></tr>
-              <tr><td>BioMed Bharath 2024 - Hackathon</td><td>A Portable Device for Monitoring Fetal Movement Count</td><td>GITAM Institute of Medical Science and Research</td><td>Secured Third Prize (₹ 25,000)</td><td>Mar-24</td></tr>
-              <tr><td>Enthirathon 2024</td><td>Neurovascular Health Monitoring Wristband</td><td>Rajalakshmi College of Engineering, Chennai</td><td>Participated</td><td>Apr-24</td></tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Patents Filed (Selected)</h2>
-          <div class="pub"><strong>Face Mask Vending Machine</strong> — Design No : 423251-001 (Sep - 2024)</div>
-          <div class="pub"><strong>Smart IoT Based Recharging Points For Electric Vehicles</strong> — 202221007543 (Apr - 2022)</div>
-          <div class="pub"><strong>Smart Dielectric System To Protect The Humans Working On Electric Poles</strong> — 202221012862 (Apr - 2022)</div>
-          <div class="pub"><strong>An Advance System to Authenticate The Person Based on Finger Vein Mating Technique</strong> — 202241035282 (Jun - 2022)</div>
-          <div class="pub"><strong>Designing and implementing a framework of Big Data Analytics integrated with IoT to support the Financial Management Sector of Organizations</strong> — 202241046254 (Aug - 2022)</div>
-          <div class="pub"><strong>A Methodology To Predict The Impact of Cachexia And Its Adverse Effects On Patients Suffering From Chronic Heart Diseases</strong> — 202211067244 (Dec - 2022)</div>
-          <div class="pub"><strong>Artificial Intelligence Based Technique For Photovoltaic Fault Detection Using Various Instruments</strong> — 202341052594 A (Nov - 2023)</div>
-          <div class="pub"><strong>Qued-Renk Boya Makine</strong> — 202341041876 (Nov - 2023)</div>
-          <div class="pub"><strong>An Empirical Examination Of Cashless Payment Systems In Business Transactions</strong> — 202311088176 A (Feb - 2024)</div>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Area of Interest & Subjects Taught</h2>
-          <p><strong>Area of Interest:</strong> Computing (Cloud, Edge & Fog), Internet of Things, Machine Learning.</p>
-          <p><strong>Subjects Recently Taught:</strong></p>
-          <ul class="plain">
-            <li>Problem Solving and Python Programming (I SEM)</li>
-            <li>Data Structures (III SEM CSE)</li>
-            <li>Data Structures Design (AI & DS & CSBS) II SEM</li>
-            <li>Programming in C (CSE & IT) II SEM</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Roles, Professional Bodies & Awards</h2>
-          <ul class="plain">
-            <li>NBA & NAAC Department Coordinator</li>
-            <li>NPTEL (SPOC)</li>
-            <li>Virtual lab Coordinator & IQAC Coordinator</li>
-            <li>Website & Social media Coordinator</li>
-            <li>ISTE LIFE TIME MEMBER – LM 130855</li>
-            <li>National Institute of Technical Training and Skill Development - NITTSD/PROFESSOR/30389</li>
-            <li><strong>Best Faculty Award</strong> — Department of Computer Science and Engineering, Nehru Institute of Engineering and Technology (Academic Years: 2022-2023 & 2023-2024)</li>
-            <li>Resource Person — "Carrier Guidance Program", Organized by School of Computational Science on 06-02-2024 at Nehru Arts and Science College.</li>
-            <li>Jury Member — Smart India Hackathon 2024 (09-09-2024 at Dhaanish Ahmed Institute of Technology, Coimbatore and 10-09-2024 at Nehru Arts and Science College, Coimbatore)</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Industry Oriented FDPs & Workshops</h2>
-          <ul class="plain">
-            <li>Attended “Rural Youth Empowerment Program” Organized by Zoho Corporation, Coimbatore from 22.12.2021 to 24.12.2021.</li>
-            <li>Attended IDE (Innovation, Design & Entrepreneurship) Bootcamp Phase – II from 29-01-2024 to 02-02-2024 held at Sri Ramakrishna Engineering College, Coimbatore.</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Self Materials & NPTEL Certifications</h2>
-          <p class="muted"><strong>Self Materials Uploaded:</strong></p>
-          <ul class="plain">
-            <li><a href="https://tinyurl.com/datastructures2022" target="_blank" class="link">Data Structures III SEM/CSE</a></li>
-            <li><a href="https://tinyurl.com/psppdatastructures2022" target="_blank" class="link">PSPP & Data Structures Design</a></li>
-          </ul>
-
-          <p class="muted"><strong>NPTEL Certification Highlights</strong></p>
-          <ul class="plain">
-            <li><strong>Domain Scholar — Programming</strong> (Programming, Data Structures & Algorithms, Modern C++, Java, Python, R Software and related courses)</li>
-            <li>Programming, Data Structures And Algorithms Using Python — ELITE (Jul–Sep 2022)</li>
-            <li>Data Analytics with Python — Completed (Jan–Apr 2023)</li>
-            <li>Foundations of R Software — ELITE + Silver (Jul–Oct 2023)</li>
-            <li>Programming in Java — ELITE (Jan–Apr 2024)</li>
-            <li>Python for Data Science — Successfully Completed (2024)</li>
-            <li>Programming in Modern C++ — ELITE (Jul–Dec 2024)</li>
-            <li>Cloud Computing — ELITE (Jul–Dec 2024)</li>
-            <li>Introduction to Internet of Things — ELITE + Silver (Jul–Dec 2024)</li>
-            <li>Database Management System — Successfully Completed (Jan–Apr 2024)</li>
-            <li><strong>NPTEL Discipline Star — 3-Star Category (Discipline Stars, Believers, Motivated Learner)</strong></li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Patents & Publications (Full)</h2>
-          <p class="muted">Patents (full list):</p>
-          <ul class="plain">
-            <li>FACEMASK VENDING MACHINE – Design No : 423251-001 (Sep - 2024)</li>
-            <li>Smart IoT Based Recharging Points For Electric Vehicles - 202221007543 (Apr - 2022)</li>
-            <li>Smart Dielectric System To Protect The Humans Working On Electric Poles - 202221012862 (Apr - 2022)</li>
-            <li>An Advance System to Authenticate The Person Based on Finger Vein Mating Technique - 202241035282 (Jun - 2022)</li>
-            <li>Designing and implementing a framework of Big Data Analytics integrated with IoT to support the Financial Management Sector of Organizations - 202241046254 (Aug - 2022)</li>
-            <li>A Methodology To Predict The Impact of Cachexia And Its Adverse Effects On Patients Suffering From Chronic Heart Diseases - 202211067244 (Dec - 2022)</li>
-            <li>Artificial Intelligence Based Technique For Photovoltaic Fault Detection Using Various Instruments Along With Comparative Analysis - 202341052594 A (Nov - 2023)</li>
-            <li>Qued-Renk Boya Makine – 202341041876 (Nov - 2023)</li>
-            <li>An Empirical Examination Of Cashless Payment Systems In Business Transactions - 202311088176 A (Feb - 2024)</li>
-          </ul>
-        </section>
-
-        <section class="card">
-          <h2 class="sec">Personal Details</h2>
-          <table>
-            <tbody>
-              <tr><td><strong>Date of Birth</strong></td><td>24.08.1987</td></tr>
-              <tr><td><strong>Marital Status</strong></td><td>Married</td></tr>
-              <tr><td><strong>Languages Known</strong></td><td>Tamil, English, Malayalam</td></tr>
-              <tr><td><strong>Nationality</strong></td><td>Indian</td></tr>
-            </tbody>
-          </table>
-
-          <div style="margin-top:12px;font-size:13px;color:var(--muted)">
-            <p><strong>Declaration:</strong> I hereby declare all the above details are true to the best of my knowledge.</p>
-            <p>Place: Coimbatore &nbsp;&nbsp; Date: ____________</p>
-            <p style="margin-top:10px;">(M. MADAN MOHAN)</p>
-          </div>
-        </section>
-
-      </main>
     </div>
-
-    <div class="footer">
-      <div>© M. MADAN MOHAN — Assistant Professor, Computer Science & Engineering</div>
-      <div><a href="mailto:madhanaceit@gmail.com">madhanaceit@gmail.com</a> • <a href="https://www.linkedin.com/in/madanmohan-reyansh/" target="_blank">LinkedIn</a></div>
+    <div class="nptel-card-body">
+        <h4>Star Interaction</h4>
     </div>
-  </div>
+</div>
+            </div>
+        </section>
 
-  <script>
-    // Small helper: press 'D' to print
-    document.addEventListener('keydown', function(e){
-      if(e.key.toLowerCase() === 'd'){ window.print(); }
-    });
-  </script>
+        <section id="resource" class="section-block card animate-card">
+            <span class="eyebrow">Outreach Log</span>
+            <h2>Resource Person & Jury Engagements (13 Items with Photos)</h2>
+            <div class="resource-grid-photo">
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo15.jpg" alt="Prompt to Power" onerror="this.src='https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">06-08-2026</span>
+                        <h4>1. Prompt to Power Workshop</h4>
+                        <p>Dhaanish Ahmed Institute of Technology Coimbatore</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo16.jpg" alt="Think Beyond Code" onerror="this.src='https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">31-07-2026</span>
+                        <h4>2. Think Beyond Code & Chief Guest</h4>
+                        <p>Erode Sengunthar Engineering College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo17.jpg" alt="AI Tools Seminar" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">05-03-2026</span>
+                        <h4>3. AI Tools for Next Gen Innovators</h4>
+                        <p>Excel Engineering College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo18.jpg" alt="LEAD 360 Summit" onerror="this.src='https://images.unsplash.com/photo-1515187029135-18ee286d815b?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">03-03-2026</span>
+                        <h4>4. Technical Panel Moderator - LEAD 360 Summit</h4>
+                        <p>Nehru Arts and Science College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo19.jpg" alt="NPTEL Seminar" onerror="this.src='https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">20-02-2026</span>
+                        <h4>5. NPTEL & Hackathon Strategies</h4>
+                        <p>CMS College of Engineering</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo20.jpg" alt="Design Thinking" onerror="this.src='https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">07-02-2026</span>
+                        <h4>6. Design Thinking Framework Seminar</h4>
+                        <p>Easa College of Engineering and Technology</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo21.jpg" alt="Industry Solutions" onerror="this.src='https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">06-01-2026</span>
+                        <h4>7. Building Industry Solutions</h4>
+                        <p>Nehru Arts and Science College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo22.jpg" alt="Career Guidance" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">06-02-2024</span>
+                        <h4>8. Career Guidance Program</h4>
+                        <p>Nehru Arts and Science College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo23.jpg" alt="Jury SIH 1" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">09-09-2024</span>
+                        <h4>9. Jury Member - Internal SIH</h4>
+                        <p>Dhaanish Ahmed Institute of Technology</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo24.jpg" alt="Jury SIH 2" onerror="this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">10-09-2024</span>
+                        <h4>10. Jury Member - Internal SIH</h4>
+                        <p>Nehru Arts and Science College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo25.jpg" alt="Evaluator" onerror="this.src='https://images.unsplash.com/photo-1507537297725-24a1c029d3ca?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">24-04-2025</span>
+                        <h4>11. Evaluator for Tech Hackathon 2025</h4>
+                        <p>Nehru Arts and Science College</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo26.jpg" alt="TNWISE Jury" onerror="this.src='https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">28-03-2025</span>
+                        <h4>12. Jury Member at TNWISE 2025 Hackathon</h4>
+                        <p>TANCAM & Kumaraguru College of Tech</p>
+                    </div>
+                </div>
+
+                <div class="res-photo-card hover-effect">
+                    <img src="photos/photo27.jpg" alt="CONVERGENCE" onerror="this.src='https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=300&q=80'">
+                    <div class="res-content">
+                        <span class="badge-date">20-03-2025</span>
+                        <h4>13. Jury Member at CONVERGENCE 2025</h4>
+                        <p>Nehru Institute of Technology</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="hackathons" class="section-block card animate-card">
+            <span class="eyebrow">Mentorship</span>
+            <h2>Hackathon Project Guided (5 Projects with 5 Photos)</h2>
+            <div class="hack-grid">
+                <div class="hack-card hover-effect">
+                    <img src="photos/photo9.jpg" alt="Smart India Hackathon 2023" onerror="this.src='https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?auto=format&fit=crop&w=300&q=80'">
+                    <h4>Smart India Hackathon</h4>
+                    <p>Automatic Drug Dispenser | Secured First Prize (₹1,00,000)</p>
+                </div>
+                <div class="hack-card hover-effect">
+                    <img src="photos/photo10.jpg" alt="Womens Hackathon" onerror="this.src='https://images.unsplash.com/photo-1574607383476-f517f260d30b?auto=format&fit=crop&w=300&q=80'">
+                    <h4>Women’s Hackathon</h4>
+                    <p>KIT, Coimbatore | Secured First Prize (₹1,00,000)</p>
+                </div>
+                <div class="hack-card hover-effect">
+                    <img src="photos/photo11.jpg" alt="BioMed Bharath 2024" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=300&q=80'">
+                    <h4>BioMed Bharath 2024</h4>
+                    <p>Fetal Movement Monitor | Third Prize (₹25,000)</p>
+                </div>
+                <div class="hack-card hover-effect">
+                    <img src="photos/photo12.jpg" alt="Enthirathon 2024" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=300&q=80'">
+                    <h4>Enthirathon 2024</h4>
+                    <p>Neurovascular Health Wristband | Participated</p>
+                </div>
+                <div class="hack-card hover-effect">
+                    <img src="photos/photo13.jpg" alt="Smart India Hackathon 2025" onerror="this.src='https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=300&q=80'">
+                    <h4>Smart India Hackathon (Dec 2025)</h4>
+                    <p>Gold Jewellery Non-Destructive Testing | IIT Kharagpur</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="funding" class="section-block card animate-card">
+            <span class="eyebrow">Grants & Funding</span>
+            <h2>Funding Details</h2>
+            <div class="funding-grid">
+                <div class="funding-card hover-effect">
+                    <img src="photos/photo7.jpg" alt="Visionary Navigation Cane" onerror="this.src='https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=300&q=80'">
+                    <h4>1. Visionary Navigation Cane</h4>
+                    <p>DST funded project selected by NGI New Gen IEDC (2023-2024).</p>
+                </div>
+                <div class="funding-card hover-effect">
+                    <img src="photos/photo8.jpg" alt="Fetal Movement Monitor" onerror="this.src='https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=300&q=80'">
+                    <h4>2. Fetal Movement Count Monitor</h4>
+                    <p>Funded under TNSCST Student Projects Scheme (2024–2025).</p>
+                </div>
+                <div class="funding-card hover-effect">
+                    <img src="photos/photo28.jpg" alt="CSIR Seminar Grant" onerror="this.src='https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=300&q=80'">
+                    <h4>3. CSIR Seminar Grant (2022)</h4>
+                    <p>Conducted Two Days National Level Seminar on IoT Applications in Real Time.</p>
+                </div>
+                <div class="funding-card hover-effect">
+                    <img src="photos/photo29.jpg" alt="IoT Drug Dispatch System" onerror="this.src='https://images.unsplash.com/photo-1584017911766-d451b3d0e843?auto=format&fit=crop&w=300&q=80'">
+                    <h4>4. IoT Drug Dispatch System</h4>
+                    <p>TNSCST Student Projects Scheme funding (2021–2022) successfully completed.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block card animate-card">
+            <span class="eyebrow">Recognition</span>
+            <h2>Best Faculty Award & Recognition</h2>
+            <div class="award-grid">
+                <div class="award-card hover-effect">
+                    <div class="photo-scroll ratio-landscape">
+                        <div class="scroll-track frames-3">
+                            <img src="photos/photo14-1.jpg" alt="Best Faculty Award 2022-23" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo14-2.jpg" alt="Best Faculty Award 2023-24" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo14-3.jpg" alt="Best Faculty Award 2025-26" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo14-1.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo14-2.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80'">
+                            <img src="photos/photo14-3.jpg" alt="" aria-hidden="true" onerror="this.src='https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=400&q=80'">
+                        </div>
+                    </div>
+                    <h4>Best Faculty Award (2022-23, 2023-24, 2025-26)</h4>
+                    <p>Recognized for outstanding teaching performance at NIET.</p>
+                </div>
+                <div class="award-card hover-effect">
+                    <img src="photos/photo30.jpg" alt="NPTEL Translation Task" onerror="this.src='https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=300&q=80'">
+                    <h4>NPTEL Translation Task</h4>
+                    <p>Completed Translation Task for “Introduction to Machine Learning” Course Using Chitralekha Tool.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="section-block card animate-card">
+            <span class="eyebrow">Research Record</span>
+            <h2>Recent Journal Publications (15 Items)</h2>
+            <div class="pub-box-grid">
+                <div class="pub-box hover-effect"><strong>1.</strong> Smart Community Health Monitoring for Water-Borne Diseases using AI, IJERT, Feb 2026.</div>
+                <div class="pub-box hover-effect"><strong>2.</strong> Design of an Intelligent Assistive Cane Integrating Obstacle Detection, IBERTE, 2026.</div>
+                <div class="pub-box hover-effect"><strong>3.</strong> Intelligent Health Care Data Analysis System using Flower Pollination Algorithm, JSEE, 2025.</div>
+                <div class="pub-box hover-effect"><strong>4.</strong> Lightweight Vision Transformer with Dual Attention Network for Thyroid Diagnosis, WCONF, 2025.</div>
+                <div class="pub-box hover-effect"><strong>5.</strong> Automated Diagnosis of Ringworm Infection Through Web Application, Zibaldone, April 2025.</div>
+                <div class="pub-box hover-effect"><strong>6.</strong> Review on Challenges in Computational Frameworks in Building 6G for Healthcare, ICACITE, 2024.</div>
+                <div class="pub-box hover-effect"><strong>7.</strong> Portable Device for Monitoring Fetal Movement Count, IJERT, April 2024.</div>
+                <div class="pub-box hover-effect"><strong>8.</strong> Pioneering Stroke Detection for Proactive Healthcare Interventions, IJERT, April 2024.</div>
+                <div class="pub-box hover-effect"><strong>9.</strong> Classification of Kidney Cancer Data Using Depth Aware GANs, Seybold Report, June 2023.</div>
+                <div class="pub-box hover-effect"><strong>10.</strong> Survival Study on Load Balancing Methods in Edge Computing, IJMechEng, April 2022.</div>
+                <div class="pub-box hover-effect"><strong>11.</strong> Firefly Algorithm and Fuzzy C-Means Clustering for Demand Prediction, IRJET, Mar 2022.</div>
+                <div class="pub-box hover-effect"><strong>12.</strong> Augmented Reality Watch Try-On Application, JSTAR, July 2021.</div>
+                <div class="pub-box hover-effect"><strong>13.</strong> Identification of Plant Syndrome Using IPT, JSTAR, July 2021.</div>
+                <div class="pub-box hover-effect"><strong>14.</strong> Automatic Face Mask Detection Using Python, JSTAR, July 2021.</div>
+                <div class="pub-box hover-effect"><strong>15.</strong> Multiple Sensor Data-Fusion For EFD Using IoT, JSTAR, July 2021.</div>
+            </div>
+        </section>
+
+        <section id="patents" class="section-block card animate-card">
+            <span class="eyebrow">IP Filings</span>
+            <h2>Patent Filed (Small Boxes)</h2>
+            <div class="patent-grid">
+                <div class="patent-box hover-effect"><strong>1.</strong> Fetal Movement Count Device - 202641016739 A (Feb 2026)</div>
+                <div class="patent-box hover-effect"><strong>2.</strong> Automatic Drug Dispenser – 202541036210 A (April 2025)</div>
+                <div class="patent-box hover-effect"><strong>3.</strong> Facemask Vending Machine – Design No: 423251-001 (Sep 2024)</div>
+                <div class="patent-box hover-effect"><strong>4.</strong> Cashless Payment Systems in Business - 202311088176 A (Feb 2024)</div>
+                <div class="patent-box hover-effect"><strong>5.</strong> AI Technique for Photovoltaic Fault Detection - 202341052594 A (Nov 2023)</div>
+                <div class="patent-box hover-effect"><strong>6.</strong> Qued-Renk Boya Makine – 202341041876 (Nov 2023)</div>
+                <div class="patent-box hover-effect"><strong>7 & 8.</strong> Predict Impact of Cachexia on Heart Disease – 202211067244A (Dec/Nov 2022)</div>
+                <div class="patent-box hover-effect"><strong>9.</strong> Big Data Analytics Integrated with IoT for Financial Mgmt - 202241046254 A (Aug 2022)</div>
+                <div class="patent-box hover-effect"><strong>10.</strong> Finger Vein Mating Authentication System – 202241035282 A (June 2022)</div>
+                <div class="patent-box hover-effect"><strong>11.</strong> Smart IoT Recharging Points for Electric Vehicles – 202221007543 A (April 2022)</div>
+                <div class="patent-box hover-effect"><strong>12.</strong> Smart Dielectric System to Protect Workers on Electric Poles - 202221012862 (April 2022)</div>
+            </div>
+        </section>
+
+        <section id="experience" class="section-block card animate-card">
+            <span class="eyebrow">Career Timeline</span>
+            <h2>Work Experience</h2>
+            <div class="small-tabs-grid">
+                <div class="tab-box hover-effect">
+                    <h4>Nehru Institute of Engineering and Technology</h4>
+                    <p>Assistant Professor, CSE (Nov 2020 – Present)</p>
+                </div>
+                <div class="tab-box hover-effect">
+                    <h4>Karpagam College of Engineering</h4>
+                    <p>Assistant Professor, CSE (April 2019 – Nov 2020)</p>
+                </div>
+                <div class="tab-box hover-effect">
+                    <h4>Sri Shakthi Institute of Engg & Tech</h4>
+                    <p>Assistant Professor, CSE (Sept 2016 – Aug 2018)</p>
+                </div>
+                <div class="tab-box hover-effect">
+                    <h4>Ranganathan Engineering College</h4>
+                    <p>Assistant Professor, CSE (June 2012 – August 2016)</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="academics" class="section-block card animate-card">
+            <span class="eyebrow">Qualifications</span>
+            <h2>Academic Details</h2>
+            <div class="compact-table-wrap">
+                <table class="compact-table">
+                    <tr><th>Degree</th><th>Specialization</th><th>Institution</th><th>Year</th><th>Score</th></tr>
+                    <tr><td>Ph.D</td><td>CSE</td><td>Karpagam Academy of Higher Education</td><td>Pursuing</td><td>-</td></tr>
+                    <tr><td>M.E.</td><td>Software Engg</td><td>Anna University Coimbatore</td><td>2010-2012</td><td>8.0 CGPA</td></tr>
+                    <tr><td>B.Tech</td><td>IT</td><td>Adhiyamaan College of Engg</td><td>2007-2010</td><td>71.0%</td></tr>
+                    <tr><td>Diploma</td><td>IT</td><td>Sri Ramakrishna Mission</td><td>2003-2006</td><td>72.46%</td></tr>
+                    <tr><td>S.S.L.C</td><td>-</td><td>Anuparpalayam High School</td><td>2003</td><td>66.4%</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <section class="section-block card animate-card">
+            <span class="eyebrow">Specialization</span>
+            <div class="grid-2-small">
+                <div class="hover-effect p-2">
+                    <h3>Area of Interest</h3>
+                    <ul class="bullet-list-small">
+                        <li>Cloud, Edge & Fog Computing</li>
+                        <li>Internet of Things (IoT)</li>
+                        <li>Machine Learning</li>
+                    </ul>
+                </div>
+                <div class="hover-effect p-2">
+                    <h3>Subjects Taught</h3>
+                    <ul class="bullet-list-small">
+                        <li>Python Programming (I Sem)</li>
+                        <li>Data Structures (III Sem CSE)</li>
+                        <li>Data Structures Design | C Programming</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-block card animate-card">
+            <span class="eyebrow">Service & Publications</span>
+            <h2>Additional Highlights, Reviewer & Certifications</h2>
+            <div class="grid-2-small">
+                <div class="small-box hover-effect">
+                    <h4>Reviewer & Professional Bodies</h4>
+                    <p>IJERT Reviewer (Reg: IJERTREW5303) | ISTE Life Member (LM 130855) | CSI Member (F8005525) | NITTSD Professor (30389).</p>
+                </div>
+                <div class="small-box hover-effect">
+                    <h4>Book Chapter & Conferences</h4>
+                    <p>Book Published: "Problem Solving Using C" | Co-Author Book Chapter (ISBN: 978-93-5782-920-5) | Papers in NC-ISTAH, KAHE, and International Conferences (AR Watch Try-On App).</p>
+                </div>
+            </div>
+
+            <div class="small-box mt-3 hover-effect">
+                <h4>Industry Oriented FDP & NPTEL Summary ⭐</h4>
+                <p>Attended Zoho Rural Youth Empowerment & IDE Bootcamps. NPTEL SPOC with 20+ certifications (Python, Java, C++, Cloud Computing, IoT, Research Methodology, Effective Teaching in Practice with Elite + Silver stars).</p>
+            </div>
+        </section>
+<section id="gallery" class="section-block card animate-card">
+    <span class="eyebrow">Gallery</span>
+    <h2>Moments & Milestones</h2>
+    <div class="coverflow" id="coverflowGallery">
+    <div class="coverflow-slide" data-img="photos/photo32-1.jpg" data-fallback="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=500&q=80" data-name="Department Seminar" data-role="CSE Department"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-2.jpg" data-fallback="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=500&q=80" data-name="Hackathon Mentoring" data-role="Student Guidance"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-3.jpg" data-fallback="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=500&q=80" data-name="Award Ceremony" data-role="Faculty Recognition"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-4.jpg" data-fallback="https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c1?auto=format&fit=crop&w=500&q=80" data-name="NPTEL Workshop" data-role="Resource Person"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-5.jpg" data-fallback="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=500&q=80" data-name="Campus Event" data-role="Excel Engineering College"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-6.jpg" data-fallback="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=500&q=80" data-name="Guest Lecture" data-role="Invited Talk"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-7.jpg" data-fallback="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=500&q=80" data-name="Project Review" data-role="Student Projects"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-8.jpg" data-fallback="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=500&q=80" data-name="Workshop Session" data-role="Skill Development"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-9.jpg" data-fallback="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=500&q=80" data-name="Jury Panel" data-role="Hackathon Evaluation"></div>
+    <div class="coverflow-slide" data-img="photos/photo32-10.jpg" data-fallback="https://images.unsplash.com/photo-1560523159-4a9692d222f9?auto=format&fit=crop&w=500&q=80" data-name="Team Collaboration" data-role="CSE Faculty"></div>
+<div class="coverflow-slide" data-img="photos/photo32-11.jpg" data-fallback="https://images.unsplash.com/photo-1560523159-4a9692d222f9?auto=format&fit=crop&w=500&q=80" data-name="Team Collaboration" data-role="CSE Faculty"></div>
+<div class="coverflow-slide" data-img="photos/photo32-12.jpg" data-fallback="https://images.unsplash.com/photo-1560523159-4a9692d222f9?auto=format&fit=crop&w=500&q=80" data-name="Team Collaboration" data-role="CSE Faculty"></div>
+<div class="coverflow-slide" data-img="photos/photo32-13.jpg" data-fallback="https://images.unsplash.com/photo-1560523159-4a9692d222f9?auto=format&fit=crop&w=500&q=80" data-name="Team Collaboration" data-role="CSE Faculty"></div>
+</div>
+</section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p>&copy; 2026 M. Madan Mohan. Professional Portfolio.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
