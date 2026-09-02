@@ -607,7 +607,11 @@ h3 {
 
 /* ---------- Resource person ---------- */
 
-.resource-grid-photo { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
+.resource-grid-photo {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 12px;
+}
 
 .res-photo-card {
     background: var(--card-bg);
@@ -620,10 +624,79 @@ h3 {
     transition: all 0.28s ease;
 }
 
-.res-photo-card:hover { border-color: var(--emerald); transform: translateY(-4px); box-shadow: var(--shadow-hover); }
-.res-photo-card img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; transition: transform 0.5s ease; }
-.res-photo-card:hover img { transform: scale(1.06); }
-.res-content { padding: 9px 11px; display: flex; flex-direction: column; flex-grow: 1; position: relative; }
+.res-photo-card:hover {
+    border-color: var(--emerald);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+}
+
+/* Keep every resource-person photo area exactly the same 16:9 size */
+.res-photo-card > img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* 3-photo automatic slider */
+.res-photo-card .photo-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    height: auto;
+    overflow: hidden;
+    flex-shrink: 0;
+    border-radius: 0;
+}
+
+.res-photo-card .photo-slider img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    display: block;
+    opacity: 0;
+    animation: photoSlide 9s infinite;
+}
+
+/* Photo timing */
+.res-photo-card .photo-slider img:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.res-photo-card .photo-slider img:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.res-photo-card .photo-slider img:nth-child(3) {
+    animation-delay: 6s;
+}
+
+/* Smooth fade between the 3 photos */
+@keyframes photoSlide {
+    0%   { opacity: 0; }
+    10%  { opacity: 1; }
+    30%  { opacity: 1; }
+    40%  { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Do not zoom the slider images on card hover */
+.res-photo-card:hover .photo-slider img {
+    transform: none;
+}
+
+.res-content {
+    padding: 9px 11px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    position: relative;
+}
 
 .badge-date {
     display: inline-block;
@@ -842,54 +915,4 @@ footer {
     .coverflow-slide[data-pos="-1"] { transform: translate(-135%, -50%) scale(0.78); }
     .coverflow-slide[data-pos="1"] { transform: translate(35%, -50%) scale(0.78); }
     .coverflow-slide[data-pos="-2"], .coverflow-slide[data-pos="2"] { opacity: 0; pointer-events: none; }
-}
-.photo-slider {
-    position: relative;
-    width: 100%;
-    height: 220px;
-    overflow: hidden;
-    border-radius: 12px 12px 0 0;
-}
-
-.photo-slider img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0;
-    animation: photoSlide 9s infinite;
-}
-
-.photo-slider img:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.photo-slider img:nth-child(2) {
-    animation-delay: 3s;
-}
-
-.photo-slider img:nth-child(3) {
-    animation-delay: 6s;
-}
-
-@keyframes photoSlide {
-    0% {
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 1;
-    }
-
-    30% {
-        opacity: 1;
-    }
-
-    40% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 0;
-    }
 }
