@@ -916,3 +916,166 @@ footer {
     .coverflow-slide[data-pos="1"] { transform: translate(35%, -50%) scale(0.78); }
     .coverflow-slide[data-pos="-2"], .coverflow-slide[data-pos="2"] { opacity: 0; pointer-events: none; }
 }
+/* =========================================
+   NPTEL 20 COURSES - CERTIFICATE GALLERY
+   ========================================= */
+
+.nptel-course-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.nptel-course-card {
+    background: #ffffff;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    transition: all 0.35s ease;
+    position: relative;
+}
+
+.nptel-course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/* Certificate Image */
+
+.nptel-course-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+    background: #f3f4f6;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.nptel-course-card:hover img {
+    transform: scale(1.03);
+}
+
+/* Course Content */
+
+.nptel-course-content {
+    padding: 18px;
+    position: relative;
+}
+
+.nptel-course-content h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    line-height: 1.45;
+    margin: 8px 0 12px;
+    color: #1f2937;
+}
+
+.nptel-course-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 4px 0;
+    color: #4b5563;
+}
+
+.nptel-course-content strong {
+    color: #111827;
+}
+
+/* Course Number */
+
+.nptel-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #d4af37, #b8860b);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 0 4px 10px rgba(184, 134, 11, 0.25);
+}
+
+/* NPTEL Section Heading */
+
+#nptel-courses h2 {
+    margin-bottom: 8px;
+}
+
+#nptel-courses .section-desc {
+    margin-bottom: 25px;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+   ========================================= */
+
+/* Large Tablets */
+
+@media (max-width: 1200px) {
+    .nptel-course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .nptel-course-card img {
+        height: 240px;
+    }
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .nptel-course-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .nptel-course-card img {
+        height: 260px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .nptel-course-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .nptel-course-card img {
+        height: auto;
+        max-height: 400px;
+        object-fit: contain;
+    }
+
+    .nptel-course-content {
+        padding: 16px;
+    }
+
+    .nptel-course-content h4 {
+        font-size: 15px;
+    }
+
+    .nptel-course-content p {
+        font-size: 12px;
+    }
+}
+
+/* Small Mobile */
+
+@media (max-width: 400px) {
+    .nptel-course-grid {
+        gap: 15px;
+    }
+
+    .nptel-course-content {
+        padding: 14px;
+    }
+}
