@@ -1020,3 +1020,38 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Profile Picture 360° Effect */
+.profile-360 {
+    perspective: 1000px;
+}
+
+.profile-360-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: profileRotate 8s linear infinite;
+}
+
+.profile-360-inner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    backface-visibility: hidden;
+}
+
+/* 360° rotation */
+@keyframes profileRotate {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+/* Stop rotation when mouse is placed over photo */
+.profile-360:hover .profile-360-inner {
+    animation-play-state: paused;
+}
